@@ -19,3 +19,12 @@ jobs:
           cd src/main/kotlin/atmwithdraw
           kotlinc data/* AtmWithdraw.kt Tester.kt -include-runtime -d atmwithdrawtester.jar
           java -jar atmwithdrawtester.jar
+  run-two-sum:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run AtmWithdraw
+        run: |
+          cd src/main/kotlin/twosum
+          kotlinc TwoSum.kt Tester.kt -include-runtime -d twosumtester.jar
+          java -jar twosumtester.jar

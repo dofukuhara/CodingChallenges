@@ -37,3 +37,12 @@ jobs:
           cd src/main/kotlin/validparentheses
           kotlinc data/* ValidParentheses.kt Tester.kt -include-runtime -d validparenthesestester.jar
           java -jar validparenthesestester.jar
+  run-first-bad-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run FirstBadVersion
+        run: |
+          cd src/main/kotlin/firstbadversion
+          kotlinc VersionControl.kt FirstBadVersion.kt Tester.kt -include-runtime -d firstbadversiontester.jar
+          java -jar firstbadversiontester.jar

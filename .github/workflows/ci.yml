@@ -28,3 +28,12 @@ jobs:
           cd src/main/kotlin/twosum
           kotlinc TwoSum.kt Tester.kt -include-runtime -d twosumtester.jar
           java -jar twosumtester.jar
+  run-valid-parentheses:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run ValidParentheses
+        run: |
+          cd src/main/kotlin/validparentheses
+          kotlinc data/* ValidParentheses.kt Tester.kt -include-runtime -d validparenthesestester.jar
+          java -jar validparenthesestester.jar

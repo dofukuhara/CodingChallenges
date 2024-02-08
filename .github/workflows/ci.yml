@@ -59,3 +59,12 @@ jobs:
           cd src/main/kotlin/ransomnote
           kotlinc RansomNote.kt Tester.kt -include-runtime -d ransomnotetester.jar
           java -jar ransomnotetester.jar
+  run-maximum-subarray:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run MaximumSubarray
+        run: |
+          cd src/main/kotlin/maximumsubarray
+          kotlinc MaximumSubarray.kt Tester.kt -include-runtime -d maximumsubarraytester.jar
+          java -jar maximumsubarraytester.jar

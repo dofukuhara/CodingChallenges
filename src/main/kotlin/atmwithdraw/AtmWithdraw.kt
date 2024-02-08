@@ -21,7 +21,7 @@ class AtmWithdraw {
 
     fun solution(
         twoThousands: Int, fiveHundreds: Int, twoHundreds: Int, oneHundreds: Int, input: Int
-    ) {
+    ): String {
         val availableBanknotes = listOf(
             BankNote(2000, twoThousands),
             BankNote(500, fiveHundreds),
@@ -40,17 +40,17 @@ class AtmWithdraw {
         println("      - $$input")
         println("- Output:")
 
-        when (val result = checkSolution(0, availableBanknotes, "", input)) {
+        val result = when (val result = checkSolution(0, availableBanknotes, "", input)) {
             is SolutionResult.CanWithdraw -> {
-                println(result.bankNotes)
+                result.bankNotes
             }
-
             else -> {
-                println("ATM does not have enough money to process the withdraw")
+                "ATM does not have enough money to process the withdraw"
             }
         }
-        println("================================================")
-        println()
+        println(result)
+        println("================================================\n")
+        return result
     }
 
     private fun checkSolution(

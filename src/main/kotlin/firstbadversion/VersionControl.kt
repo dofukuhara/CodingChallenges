@@ -12,5 +12,8 @@ abstract class VersionControl {
         return version >= badVersion
     }
 
+    // Method exposed only for debugging purpose
+    fun getBadVersion() = badVersion
+
     abstract fun firstBadVersion(n: Int): Int
 }

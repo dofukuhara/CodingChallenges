@@ -21,7 +21,7 @@ jobs:
       - name: Run AtmWithdraw
         run: |
           cd src/main/kotlin/atmwithdraw
-          kotlinc data/* AtmWithdraw.kt Tester.kt -include-runtime -d atmwithdrawtester.jar
+          kotlinc ../utils/* data/* AtmWithdraw.kt Tester.kt -include-runtime -d atmwithdrawtester.jar
           java -jar atmwithdrawtester.jar
   run-two-sum:
     runs-on: ubuntu-latest
@@ -30,7 +30,7 @@ jobs:
       - name: Run TwoSum
         run: |
           cd src/main/kotlin/twosum
-          kotlinc TwoSum.kt Tester.kt -include-runtime -d twosumtester.jar
+          kotlinc ../utils/* TwoSum.kt Tester.kt -include-runtime -d twosumtester.jar
           java -jar twosumtester.jar
   run-valid-parentheses:
     runs-on: ubuntu-latest
@@ -39,7 +39,7 @@ jobs:
       - name: Run ValidParentheses
         run: |
           cd src/main/kotlin/validparentheses
-          kotlinc data/* ValidParentheses.kt Tester.kt -include-runtime -d validparenthesestester.jar
+          kotlinc ../utils/* data/* ValidParentheses.kt Tester.kt -include-runtime -d validparenthesestester.jar
           java -jar validparenthesestester.jar
   run-first-bad-version:
     runs-on: ubuntu-latest
@@ -48,7 +48,7 @@ jobs:
       - name: Run FirstBadVersion
         run: |
           cd src/main/kotlin/firstbadversion
-          kotlinc VersionControl.kt FirstBadVersion.kt Tester.kt -include-runtime -d firstbadversiontester.jar
+          kotlinc ../utils/* VersionControl.kt FirstBadVersion.kt Tester.kt -include-runtime -d firstbadversiontester.jar
           java -jar firstbadversiontester.jar
   run-ransom-note:
     runs-on: ubuntu-latest
@@ -57,7 +57,7 @@ jobs:
       - name: Run RansomNote
         run: |
           cd src/main/kotlin/ransomnote
-          kotlinc RansomNote.kt Tester.kt -include-runtime -d ransomnotetester.jar
+          kotlinc ../utils/* RansomNote.kt Tester.kt -include-runtime -d ransomnotetester.jar
           java -jar ransomnotetester.jar
   run-maximum-subarray:
     runs-on: ubuntu-latest
@@ -66,5 +66,14 @@ jobs:
       - name: Run MaximumSubarray
         run: |
           cd src/main/kotlin/maximumsubarray
-          kotlinc MaximumSubarray.kt Tester.kt -include-runtime -d maximumsubarraytester.jar
+          kotlinc ../utils/* MaximumSubarray.kt Tester.kt -include-runtime -d maximumsubarraytester.jar
           java -jar maximumsubarraytester.jar
+  run-insert-interval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run InsertInterval
+        run: |
+          cd src/main/kotlin/insertinterval
+          kotlinc ../utils/* InsertInterval.kt Tester.kt -include-runtime -d insertintervaltester.jar
+          java -jar insertintervaltester.jar

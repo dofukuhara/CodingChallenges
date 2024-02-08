@@ -35,16 +35,18 @@ class FirstBadVersion: VersionControl() {
         println(codeChallenge)
     }
     override fun firstBadVersion(n: Int): Int {
+        printSolutionStart(n, getBadVersion())
+
         // Edge case - version less or equal to zero
         if (n <= 0) {
-            return 0
+            return 0.printEndSolution()
         }
         // Edge case - only one version to check
         if (n == 1) {
             return if (isBadVersion(1)) {
-                1
+                1.printEndSolution()
             } else {
-                0
+                0.printEndSolution()
             }
         }
 
@@ -57,7 +59,7 @@ class FirstBadVersion: VersionControl() {
                 // if 'pivot - 1' == 0, or isBadVersion from 'pivot - 1' is false, then we found the first bad version
                 // else adjust the pivot to the left (keep leftBoundary and adjust pivot and rightBoundary)
                 if (pivot - 1 == 0 || !isBadVersion(pivot - 1)) {
-                    return pivot
+                    return pivot.printEndSolution()
                 } else {
                     val offset = (pivot - leftBoundary + 1) / 2
                     val temp = pivot
@@ -73,6 +75,16 @@ class FirstBadVersion: VersionControl() {
             }
         }
 
-        return 0
+        return 0.printEndSolution()
     }
+}
+private fun printSolutionStart(n: Int, bad: Int) {
+    println("===================================================================")
+    println("- Input: n = $n, bad = $bad")
+}
+
+private fun Int.printEndSolution():Int {
+    println("- Output: $this")
+    println("===================================================================\n")
+    return this
 }

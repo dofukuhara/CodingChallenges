@@ -95,3 +95,30 @@ jobs:
           cd src/main/kotlin/linkedlistcycle
           kotlinc ../utils/*  ../common/* LinkedListCycle.kt Tester.kt -include-runtime -d linkedlistcycletester.jar
           java -jar linkedlistcycletester.jar
+  run-01-matrix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run 01Matrix
+        run: |
+          cd src/main/kotlin/matrix01
+          kotlinc ../utils/*  Matrix01.kt Tester.kt -include-runtime -d matrix01tester.jar
+          java -jar matrix01tester.jar
+  run-k-closes-points-to-origin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run KClosestPointsToOrigin
+        run: |
+          cd src/main/kotlin/kclosestpointstoorigin
+          kotlinc ../utils/*  KClosestPointsToOrigin.kt Tester.kt -include-runtime -d kclosestpointstoorigintester.jar
+          java -jar kclosestpointstoorigintester.jar
+  run-longest-unique-substring:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run LongestSubstringWithoutRepeatingCharacters
+        run: |
+          cd src/main/kotlin/longestuniquesubstring
+          kotlinc ../utils/*  LongestUniqueSubstring.kt Tester.kt -include-runtime -d longestuniquesubstringtester.jar
+          java -jar longestuniquesubstringtester.jar

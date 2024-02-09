@@ -113,3 +113,12 @@ jobs:
           cd src/main/kotlin/kclosestpointstoorigin
           kotlinc ../utils/*  KClosestPointsToOrigin.kt Tester.kt -include-runtime -d kclosestpointstoorigintester.jar
           java -jar kclosestpointstoorigintester.jar
+  run-longest-unique-substring:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run LongestSubstringWithoutRepeatingCharacters
+        run: |
+          cd src/main/kotlin/longestuniquesubstring
+          kotlinc ../utils/*  LongestUniqueSubstring.kt Tester.kt -include-runtime -d longestuniquesubstringtester.jar
+          java -jar longestuniquesubstringtester.jar

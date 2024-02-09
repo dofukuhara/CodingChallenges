@@ -95,3 +95,12 @@ jobs:
           cd src/main/kotlin/linkedlistcycle
           kotlinc ../utils/*  ../common/* LinkedListCycle.kt Tester.kt -include-runtime -d linkedlistcycletester.jar
           java -jar linkedlistcycletester.jar
+  run-01-matrix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run 01Matrix
+        run: |
+          cd src/main/kotlin/matrix01
+          kotlinc ../utils/*  Matrix01.kt Tester.kt -include-runtime -d matrix01tester.jar
+          java -jar matrix01tester.jar

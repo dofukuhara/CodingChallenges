@@ -77,3 +77,21 @@ jobs:
           cd src/main/kotlin/insertinterval
           kotlinc ../utils/* InsertInterval.kt Tester.kt -include-runtime -d insertintervaltester.jar
           java -jar insertintervaltester.jar
+  run-binary-search:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run BinarySearch
+        run: |
+          cd src/main/kotlin/binarysearch
+          kotlinc ../utils/* BinarySearch.kt Tester.kt -include-runtime -d binarysearchtester.jar
+          java -jar binarysearchtester.jar
+  run-linked-list-cycle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run LinkedListCycle
+        run: |
+          cd src/main/kotlin/linkedlistcycle
+          kotlinc ../utils/*  ../common/* LinkedListCycle.kt Tester.kt -include-runtime -d linkedlistcycletester.jar
+          java -jar linkedlistcycletester.jar

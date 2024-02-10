@@ -122,3 +122,12 @@ jobs:
           cd src/main/kotlin/longestuniquesubstring
           kotlinc ../utils/*  LongestUniqueSubstring.kt Tester.kt -include-runtime -d longestuniquesubstringtester.jar
           java -jar longestuniquesubstringtester.jar
+  run-three-sum:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run 3Sum
+        run: |
+          cd src/main/kotlin/threesum
+          kotlinc ../utils/*  ThreeSum.kt Tester.kt -include-runtime -d threesumtester.jar
+          java -jar threesumtester.jar

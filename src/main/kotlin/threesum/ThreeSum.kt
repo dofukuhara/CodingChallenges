@@ -44,7 +44,7 @@ class ThreeSum {
         println(codeChallenge)
     }
     fun threeSum(nums: IntArray): List<List<Int>> {
-        printSolutionStart(nums)
+        printSolutionStart(nums, "threeSum")
 
         nums.sort()
         // Edge cases (after sorting the array) - No possible triple when:
@@ -90,16 +90,7 @@ class ThreeSum {
             negatives.forEach { (negativeNumber, negativeCounter) ->
                 val positiveNumber = -1 * negativeNumber
                 if (positives.contains(positiveNumber)) {
-                    val positiveCounter = positives[positiveNumber] ?: 1
-                    val possibleCombinations = minOf(
-                        minOf(negativeCounter, positiveCounter),
-                        zeros
-                    )
-                    resultList.addAll(
-                        Array(size = possibleCombinations) {
-                            listOf(negativeNumber,0,positiveNumber)
-                        }.toList()
-                    )
+                    resultList.add(listOf(negativeNumber,0,positiveNumber))
                 }
             }
         }
@@ -111,64 +102,71 @@ class ThreeSum {
                 // same negative number is needed
                 if (numberNeeded == negativeNumber) {
                     if (negativeCounter > 1) {
-                        val possibleCombinations = minOf(
-                            positiveCounter,
-                            negativeCounter/2
-                        )
-                        resultList.addAll(
-                            Array(size = possibleCombinations) {
-                                listOf(negativeNumber,negativeNumber,positiveNumber)
-                            }.toList()
-                        )
+                        resultList.add(listOf(negativeNumber,negativeNumber,positiveNumber))
                     }
                 // same positive number is needed
                 } else if (numberNeeded == positiveNumber) {
                     if (positiveCounter > 1) {
-                        val possibleCombinations = minOf(
-                            positiveCounter/2,
-                            negativeCounter
-                        )
-                        resultList.addAll(
-                            Array(size = possibleCombinations) {
-                                listOf(negativeNumber,positiveNumber,positiveNumber)
-                            }.toList()
-                        )
+                        resultList.add(listOf(negativeNumber,positiveNumber,positiveNumber))
                     }
                 // two different negatives and one positive
                 } else if (numberNeeded < 0) {
                     val negativeNeededCounter = negatives[numberNeeded]
                     negativeNeededCounter?.let {
-                        val possibleCombinations = minOf(
-                            minOf(positiveCounter, negativeCounter),
-                            it
-                        )
-                        resultList.addAll(
-                            Array(size = possibleCombinations) {
-                                listOf(
-                                    minOf(negativeNumber, numberNeeded),
-                                    maxOf(negativeNumber, numberNeeded),
-                                    positiveNumber)
-                            }.toList()
-                        )
+                        resultList.add(listOf(
+                            minOf(negativeNumber, numberNeeded),
+                            maxOf(negativeNumber, numberNeeded),
+                            positiveNumber))
                     }
                 // two different positives and one negative
                 } else if (numberNeeded > 0) {
                     val positiveNeededCounter = positives[numberNeeded]
                     positiveNeededCounter?.let {
-                        val possibleCombinations = minOf(
-                            minOf(positiveCounter, negativeCounter),
-                            it
-                        )
-                        resultList.addAll(
-                            Array(size = possibleCombinations) {
-                                listOf(
-                                    negativeNumber,
-                                    minOf(positiveNumber, numberNeeded),
-                                    maxOf(positiveNumber, numberNeeded)
-                                )
-                            }.toList()
-                        )
+                        resultList.add(listOf(
+                            negativeNumber,
+                            minOf(positiveNumber, numberNeeded),
+                            maxOf(positiveNumber, numberNeeded)
+                        ))
                     }
+                }
+            }
+        }
+
+        return resultList.toList().printSolutionEnd()
+    }
+
+    fun threeSum_solutionTwo(nums: IntArray): List<List<Int>> {
+        printSolutionStart(nums, "threeSum_solutionTwo")
+
+        nums.sort()
+        // Edge cases (after sorting the array) - No possible triple when:
+        // 1) nums size is less than or equal to 2
+        // 2) All items from array are greater than zero;
+        // 3) Up to 2 zeros at the start of the array and the remaining items are all greater than zero;
+        // 4) All items from array are less than zero;
+        // 5) Up to 2 zeros at the end of the array and the remaining items are all less than zero.
+        if (nums.size <= 2 ||
+            nums.first() > 0 && nums.last() > 0 ||
+            nums.first() == 0 && nums[2] > 0 ||
+            nums.first() < 0 && nums.last() < 0 ||
+            nums[nums.size-3] < 0 && nums.last() == 0) {
+            return emptyList<List<Int>>().printSolutionEnd()
+        }
+
+        val resultList = mutableSetOf<List<Int>>()
+        for (index in 0 .. nums.size - 3) {
+            var leftRunner = index + 1
+            var rightRunner = nums.size - 1
+            while (leftRunner < rightRunner) {
+                val threeSum = nums[index] + nums[leftRunner] + nums[rightRunner]
+                if (threeSum == 0) {
+                    resultList.add(listOf(nums[index], nums[leftRunner], nums[rightRunner]).sorted())
+                    leftRunner += 1
+                    rightRunner -= 1
+                } else if (threeSum > 0) {
+                    rightRunner -= 1
+                } else {
+                    leftRunner += 1
                 }
             }
         }
@@ -177,12 +175,14 @@ class ThreeSum {
     }
 }
 
-private fun printSolutionStart(nums: IntArray) {
+private fun printSolutionStart(nums: IntArray, solutionName: String) {
     println("===========================================================")
+    println("- Running: $solutionName")
     println("- Input: nums = ${nums.printableIntArray()}")
 }
 
 private fun List<List<Int>>.printSolutionEnd(): List<List<Int>> {
+    val endTimeInMillis = System.nanoTime()
     println("- Output: $this")
     println("===========================================================\n")
     return this

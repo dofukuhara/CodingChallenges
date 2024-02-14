@@ -149,3 +149,12 @@ jobs:
           cd src/main/kotlin/balancedbinarytree
           kotlinc ../utils/* ../common/* BalancedBinaryTree.kt Tester.kt -include-runtime -d balancedbinarytreetester.jar
           java -jar balancedbinarytreetester.jar
+  run-add-binary:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run AddBinary
+        run: |
+          cd src/main/kotlin/addbinary
+          kotlinc ../utils/* ../common/* AddBinary.kt Tester.kt -include-runtime -d addbinarytester.jar
+          java -jar addbinarytester.jar

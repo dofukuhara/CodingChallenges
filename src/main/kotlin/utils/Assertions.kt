@@ -1,5 +1,7 @@
 package utils
 
+import common.structures.TreeNode
+
 fun Boolean.assertWith(expected: Boolean) {
     if (this != expected) {
         throw TestCaseAssertFail("\nTest case fail\n- Expected: $expected\n- Actual:   $this")
@@ -35,5 +37,12 @@ fun IntArray.assertWith(expected: String) {
 fun List<List<Int>>.assertWith(expected: String) {
     if (this.toString() != expected) {
         throw TestCaseAssertFail("\nTest case fail\n- Expected: $expected\n- Actual:   $this")
+    }
+}
+
+fun TreeNode?.assertWith(expected: Int) {
+    val actualResult = this?.`val`
+    if (actualResult != expected) {
+        throw TestCaseAssertFail("\nTest case fail\n- Expected: $expected\n- Actual:   $actualResult")
     }
 }

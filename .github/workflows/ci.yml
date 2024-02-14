@@ -131,3 +131,12 @@ jobs:
           cd src/main/kotlin/threesum
           kotlinc ../utils/*  ThreeSum.kt Tester.kt -include-runtime -d threesumtester.jar
           java -jar threesumtester.jar
+  run-bst-lca:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run LowestCommonAncestor
+        run: |
+          cd src/main/kotlin/lowestcommonancestorbst
+          kotlinc ../utils/*  LowestCommonAncestorBST.kt Tester.kt -include-runtime -d lowestcommonancestorbsttester.jar
+          java -jar lowestcommonancestorbsttester.jar

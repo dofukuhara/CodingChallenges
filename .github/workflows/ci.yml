@@ -138,5 +138,14 @@ jobs:
       - name: Run LowestCommonAncestor
         run: |
           cd src/main/kotlin/lowestcommonancestorbst
-          kotlinc ../utils/*  LowestCommonAncestorBST.kt Tester.kt -include-runtime -d lowestcommonancestorbsttester.jar
+          kotlinc ../utils/* ../common/* LowestCommonAncestorBST.kt Tester.kt -include-runtime -d lowestcommonancestorbsttester.jar
           java -jar lowestcommonancestorbsttester.jar
+  run-balanced-binary-tree:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run BalancedBinaryTree
+        run: |
+          cd src/main/kotlin/balancedbinarytree
+          kotlinc ../utils/* ../common/* BalancedBinaryTree.kt Tester.kt -include-runtime -d balancedbinarytreetester.jar
+          java -jar balancedbinarytreetester.jar

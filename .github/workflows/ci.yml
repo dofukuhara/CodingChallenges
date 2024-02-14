@@ -21,7 +21,7 @@ jobs:
       - name: Run AtmWithdraw
         run: |
           cd src/main/kotlin/atmwithdraw
-          kotlinc ../utils/* data/* AtmWithdraw.kt Tester.kt -include-runtime -d atmwithdrawtester.jar
+          kotlinc ../utils/* ../common/* data/* AtmWithdraw.kt Tester.kt -include-runtime -d atmwithdrawtester.jar
           java -jar atmwithdrawtester.jar
   run-two-sum:
     runs-on: ubuntu-latest
@@ -30,7 +30,7 @@ jobs:
       - name: Run TwoSum
         run: |
           cd src/main/kotlin/twosum
-          kotlinc ../utils/* TwoSum.kt Tester.kt -include-runtime -d twosumtester.jar
+          kotlinc ../utils/* ../common/* TwoSum.kt Tester.kt -include-runtime -d twosumtester.jar
           java -jar twosumtester.jar
   run-valid-parentheses:
     runs-on: ubuntu-latest
@@ -39,7 +39,7 @@ jobs:
       - name: Run ValidParentheses
         run: |
           cd src/main/kotlin/validparentheses
-          kotlinc ../utils/* data/* ValidParentheses.kt Tester.kt -include-runtime -d validparenthesestester.jar
+          kotlinc ../utils/* ../common/* data/* ValidParentheses.kt Tester.kt -include-runtime -d validparenthesestester.jar
           java -jar validparenthesestester.jar
   run-first-bad-version:
     runs-on: ubuntu-latest
@@ -48,7 +48,7 @@ jobs:
       - name: Run FirstBadVersion
         run: |
           cd src/main/kotlin/firstbadversion
-          kotlinc ../utils/* VersionControl.kt FirstBadVersion.kt Tester.kt -include-runtime -d firstbadversiontester.jar
+          kotlinc ../utils/* ../common/* VersionControl.kt FirstBadVersion.kt Tester.kt -include-runtime -d firstbadversiontester.jar
           java -jar firstbadversiontester.jar
   run-ransom-note:
     runs-on: ubuntu-latest
@@ -57,7 +57,7 @@ jobs:
       - name: Run RansomNote
         run: |
           cd src/main/kotlin/ransomnote
-          kotlinc ../utils/* RansomNote.kt Tester.kt -include-runtime -d ransomnotetester.jar
+          kotlinc ../utils/* ../common/* RansomNote.kt Tester.kt -include-runtime -d ransomnotetester.jar
           java -jar ransomnotetester.jar
   run-maximum-subarray:
     runs-on: ubuntu-latest
@@ -66,7 +66,7 @@ jobs:
       - name: Run MaximumSubarray
         run: |
           cd src/main/kotlin/maximumsubarray
-          kotlinc ../utils/* MaximumSubarray.kt Tester.kt -include-runtime -d maximumsubarraytester.jar
+          kotlinc ../utils/* ../common/* MaximumSubarray.kt Tester.kt -include-runtime -d maximumsubarraytester.jar
           java -jar maximumsubarraytester.jar
   run-insert-interval:
     runs-on: ubuntu-latest
@@ -75,7 +75,7 @@ jobs:
       - name: Run InsertInterval
         run: |
           cd src/main/kotlin/insertinterval
-          kotlinc ../utils/* InsertInterval.kt Tester.kt -include-runtime -d insertintervaltester.jar
+          kotlinc ../utils/* ../common/* InsertInterval.kt Tester.kt -include-runtime -d insertintervaltester.jar
           java -jar insertintervaltester.jar
   run-binary-search:
     runs-on: ubuntu-latest
@@ -84,7 +84,7 @@ jobs:
       - name: Run BinarySearch
         run: |
           cd src/main/kotlin/binarysearch
-          kotlinc ../utils/* BinarySearch.kt Tester.kt -include-runtime -d binarysearchtester.jar
+          kotlinc ../utils/* ../common/* BinarySearch.kt Tester.kt -include-runtime -d binarysearchtester.jar
           java -jar binarysearchtester.jar
   run-linked-list-cycle:
     runs-on: ubuntu-latest
@@ -93,7 +93,7 @@ jobs:
       - name: Run LinkedListCycle
         run: |
           cd src/main/kotlin/linkedlistcycle
-          kotlinc ../utils/*  ../common/* LinkedListCycle.kt Tester.kt -include-runtime -d linkedlistcycletester.jar
+          kotlinc ../utils/* ../common/* LinkedListCycle.kt Tester.kt -include-runtime -d linkedlistcycletester.jar
           java -jar linkedlistcycletester.jar
   run-01-matrix:
     runs-on: ubuntu-latest
@@ -102,7 +102,7 @@ jobs:
       - name: Run 01Matrix
         run: |
           cd src/main/kotlin/matrix01
-          kotlinc ../utils/*  Matrix01.kt Tester.kt -include-runtime -d matrix01tester.jar
+          kotlinc ../utils/* ../common/* Matrix01.kt Tester.kt -include-runtime -d matrix01tester.jar
           java -jar matrix01tester.jar
   run-k-closes-points-to-origin:
     runs-on: ubuntu-latest
@@ -111,7 +111,7 @@ jobs:
       - name: Run KClosestPointsToOrigin
         run: |
           cd src/main/kotlin/kclosestpointstoorigin
-          kotlinc ../utils/*  KClosestPointsToOrigin.kt Tester.kt -include-runtime -d kclosestpointstoorigintester.jar
+          kotlinc ../utils/* ../common/* KClosestPointsToOrigin.kt Tester.kt -include-runtime -d kclosestpointstoorigintester.jar
           java -jar kclosestpointstoorigintester.jar
   run-longest-unique-substring:
     runs-on: ubuntu-latest
@@ -120,7 +120,7 @@ jobs:
       - name: Run LongestSubstringWithoutRepeatingCharacters
         run: |
           cd src/main/kotlin/longestuniquesubstring
-          kotlinc ../utils/*  LongestUniqueSubstring.kt Tester.kt -include-runtime -d longestuniquesubstringtester.jar
+          kotlinc ../utils/* ../common/* LongestUniqueSubstring.kt Tester.kt -include-runtime -d longestuniquesubstringtester.jar
           java -jar longestuniquesubstringtester.jar
   run-three-sum:
     runs-on: ubuntu-latest
@@ -129,5 +129,23 @@ jobs:
       - name: Run 3Sum
         run: |
           cd src/main/kotlin/threesum
-          kotlinc ../utils/*  ThreeSum.kt Tester.kt -include-runtime -d threesumtester.jar
+          kotlinc ../utils/* ../common/* ThreeSum.kt Tester.kt -include-runtime -d threesumtester.jar
           java -jar threesumtester.jar
+  run-bst-lca:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run LowestCommonAncestor
+        run: |
+          cd src/main/kotlin/lowestcommonancestorbst
+          kotlinc ../utils/* ../common/* LowestCommonAncestorBST.kt Tester.kt -include-runtime -d lowestcommonancestorbsttester.jar
+          java -jar lowestcommonancestorbsttester.jar
+  run-balanced-binary-tree:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run BalancedBinaryTree
+        run: |
+          cd src/main/kotlin/balancedbinarytree
+          kotlinc ../utils/* ../common/* BalancedBinaryTree.kt Tester.kt -include-runtime -d balancedbinarytreetester.jar
+          java -jar balancedbinarytreetester.jar

@@ -1,5 +1,6 @@
 package utils
 
+import common.structures.GraphNode
 
 
 fun IntArray.printableIntArray(): String {
@@ -23,4 +24,43 @@ fun Array<IntArray>.printableArrayOfIntArray(): String {
         }
     }
     return message.append("]").toString()
+}
+
+fun GraphNode?.printableGraph(): String {
+    val currentResult = StringBuilder()
+    if (this == null) {
+        currentResult.append("[]")
+    } else {
+        val graphRunner = mutableListOf<GraphNode>().apply {
+            add(this@printableGraph)
+        }
+        currentResult.append("[")
+        val nodesAlreadyVisited = mutableSetOf<GraphNode>().apply { add(this@printableGraph) }
+        while (graphRunner.isNotEmpty()) {
+            val currentNode = graphRunner.removeFirst()
+
+            currentResult.append("[${currentNode.`val`}|")
+            currentNode.neighbors.forEachIndexed { index, graphNode ->
+                currentResult.append("${graphNode?.`val`}")
+                if (index < currentNode.neighbors.size - 1) {
+                    currentResult.append(",")
+                } else {
+                    currentResult.append("]")
+                }
+                if (graphNode != null && !nodesAlreadyVisited.contains(graphNode)) {
+                    nodesAlreadyVisited.add(graphNode)
+                    graphRunner.add(graphNode)
+                }
+            }
+            currentResult.append(",")
+        }
+        if (currentResult.endsWith(",")) {
+            currentResult.deleteCharAt(currentResult.length - 1)
+        }
+        if (currentResult.endsWith("|")) {
+            currentResult.append("]")
+        }
+        currentResult.append("]")
+    }
+    return currentResult.toString()
 }

@@ -158,3 +158,12 @@ jobs:
           cd src/main/kotlin/addbinary
           kotlinc ../utils/* ../common/* AddBinary.kt Tester.kt -include-runtime -d addbinarytester.jar
           java -jar addbinarytester.jar
+  run-clone-graph:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run CloneGraph
+        run: |
+          cd src/main/kotlin/clonegraph
+          kotlinc ../utils/* ../common/* CloneGraph.kt Tester.kt -include-runtime -d clonegraphtester.jar
+          java -jar clonegraphtester.jar

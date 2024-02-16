@@ -185,3 +185,12 @@ jobs:
           cd src/main/kotlin/trieprefixtree
           kotlinc ../utils/* ../common/* Trie.kt Tester.kt -include-runtime -d trieprefixtreetester.jar
           java -jar trieprefixtreetester.jar
+  run-coin-change:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run CoinChange
+        run: |
+          cd src/main/kotlin/coinchange
+          kotlinc ../utils/* ../common/* CoinChange.kt Tester.kt -include-runtime -d coinchangetester.jar
+          java -jar coinchangetester.jar

@@ -176,3 +176,12 @@ jobs:
           cd src/main/kotlin/courseschedule
           kotlinc ../utils/* ../common/* CourseSchedule.kt Tester.kt -include-runtime -d coursescheduletester.jar
           java -jar coursescheduletester.jar
+  run-trie-implementation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run trieprefixtree
+        run: |
+          cd src/main/kotlin/trieprefixtree
+          kotlinc ../utils/* ../common/* Trie.kt Tester.kt -include-runtime -d trieprefixtreetester.jar
+          java -jar trieprefixtreetester.jar

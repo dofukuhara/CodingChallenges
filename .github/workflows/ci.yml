@@ -167,3 +167,12 @@ jobs:
           cd src/main/kotlin/clonegraph
           kotlinc ../utils/* ../common/* CloneGraph.kt Tester.kt -include-runtime -d clonegraphtester.jar
           java -jar clonegraphtester.jar
+  run-course-schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run CourseSchedule
+        run: |
+          cd src/main/kotlin/courseschedule
+          kotlinc ../utils/* ../common/* CourseSchedule.kt Tester.kt -include-runtime -d coursescheduletester.jar
+          java -jar coursescheduletester.jar

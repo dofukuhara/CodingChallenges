@@ -15,6 +15,18 @@ fun IntArray.printableIntArray(): String {
     return message.toString()
 }
 
+fun CharArray.printableCharArray(): String {
+    val message = StringBuilder("\n     [")
+    this.forEachIndexed { index, element ->
+        message.append("'$element'")
+        if (index < this.size - 1) {
+            message.append(",")
+        }
+    }
+    message.append("]")
+    return message.toString()
+}
+
 fun Array<IntArray>.printableArrayOfIntArray(): String {
     val message = StringBuilder("[")
     this.forEachIndexed { index, element ->
@@ -24,6 +36,17 @@ fun Array<IntArray>.printableArrayOfIntArray(): String {
         }
     }
     return message.append("]").toString()
+}
+
+fun Array<CharArray>.printableArrayOfCharArray(): String {
+    val message = StringBuilder("[")
+    this.forEachIndexed { index, element ->
+        message.append(element.printableCharArray())
+        if (index < this.size - 1) {
+            message.append(",")
+        }
+    }
+    return message.append("\n   ]").toString()
 }
 
 fun GraphNode?.printableGraph(): String {

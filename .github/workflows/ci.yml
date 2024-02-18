@@ -194,3 +194,30 @@ jobs:
           cd src/main/kotlin/coinchange
           kotlinc ../utils/* ../common/* CoinChange.kt Tester.kt -include-runtime -d coinchangetester.jar
           java -jar coinchangetester.jar
+  run-number-of-islands:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run NumberOfIslands
+        run: |
+          cd src/main/kotlin/numberofislands
+          kotlinc ../utils/* ../common/* NumberOfIslands.kt Tester.kt -include-runtime -d numberofislandstester.jar
+          java -jar numberofislandstester.jar
+  run-rotting-oranges:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run RottingOranges
+        run: |
+          cd src/main/kotlin/rottingoranges
+          kotlinc ../utils/* ../common/* RottingOranges.kt Tester.kt -include-runtime -d rottingorangestester.jar
+          java -jar rottingorangestester.jar
+  run-search-rotated-sorted-array:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run SearchInRotatedSortedArray
+        run: |
+          cd src/main/kotlin/searchrotatedsortedarray
+          kotlinc ../utils/* ../common/* SearchInRotatedSortedArray.kt Tester.kt -include-runtime -d searchrotatedsortedarraytester.jar
+          java -jar searchrotatedsortedarraytester.jar

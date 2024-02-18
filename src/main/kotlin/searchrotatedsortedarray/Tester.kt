@@ -24,4 +24,9 @@ fun main() {
         nums = intArrayOf(1,3,5),
         target = 2
     ).assertWith(-1)
+
+    solution.search(
+        nums = intArrayOf(3,1),
+        target = 1
+    ).assertWith(1)
 }

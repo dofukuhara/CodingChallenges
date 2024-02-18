@@ -203,3 +203,12 @@ jobs:
           cd src/main/kotlin/numberofislands
           kotlinc ../utils/* ../common/* NumberOfIslands.kt Tester.kt -include-runtime -d numberofislandstester.jar
           java -jar numberofislandstester.jar
+  run-rotting-oranges:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run RottingOranges
+        run: |
+          cd src/main/kotlin/rottingoranges
+          kotlinc ../utils/* ../common/* RottingOranges.kt Tester.kt -include-runtime -d rottingorangestester.jar
+          java -jar rottingorangestester.jar

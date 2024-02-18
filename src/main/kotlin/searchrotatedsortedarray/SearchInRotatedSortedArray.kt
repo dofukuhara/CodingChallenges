@@ -112,6 +112,9 @@ class SearchInRotatedSortedArray {
     }
 
     private fun returnIndexIfFound(nums: IntArray, target: Int, startIndex: Int, endIndex: Int): Int {
+        // When startIndex is greater than endIndex, we have exhausted the possibilities and didn't find the index, so returning -1
+        if (startIndex > endIndex) return -1
+
         val middle = ((endIndex - startIndex) / 2) + startIndex
         return when {
             (nums[startIndex] == target) ->  startIndex

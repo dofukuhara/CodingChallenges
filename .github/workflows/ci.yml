@@ -135,7 +135,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Run LowestCommonAncestor
+      - name: Run LowestCommonAncestorBST
         run: |
           cd src/main/kotlin/lowestcommonancestorbst
           kotlinc ../utils/* ../common/* LowestCommonAncestorBST.kt Tester.kt -include-runtime -d lowestcommonancestorbsttester.jar
@@ -257,3 +257,12 @@ jobs:
           cd src/main/kotlin/validatebinarysearchtree
           kotlinc ../utils/* ../common/* ValidateBinarySearchTree.kt Tester.kt -include-runtime -d validatebinarysearchtreetester.jar
           java -jar validatebinarysearchtreetester.jar
+  run-lca:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run LowestCommonAncestor
+        run: |
+          cd src/main/kotlin/lowestcommonancestor
+          kotlinc ../utils/* ../common/* LowestCommonAncestor.kt Tester.kt -include-runtime -d lowestcommonancestortester.jar
+          java -jar lowestcommonancestortester.jar

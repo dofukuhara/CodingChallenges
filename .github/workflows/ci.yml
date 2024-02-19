@@ -221,3 +221,12 @@ jobs:
           cd src/main/kotlin/searchrotatedsortedarray
           kotlinc ../utils/* ../common/* SearchInRotatedSortedArray.kt Tester.kt -include-runtime -d searchrotatedsortedarraytester.jar
           java -jar searchrotatedsortedarraytester.jar
+  run-combination-sum:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run CombinationSum
+        run: |
+          cd src/main/kotlin/combinationsum
+          kotlinc ../utils/* ../common/* CombinationSum.kt Tester.kt -include-runtime -d combinationsumtester.jar
+          java -jar combinationsumtester.jar

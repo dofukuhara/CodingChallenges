@@ -266,3 +266,12 @@ jobs:
           cd src/main/kotlin/lowestcommonancestor
           kotlinc ../utils/* ../common/* LowestCommonAncestor.kt Tester.kt -include-runtime -d lowestcommonancestortester.jar
           java -jar lowestcommonancestortester.jar
+  run-sort-color:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run SortColors
+        run: |
+          cd src/main/kotlin/sortcolors
+          kotlinc ../utils/* ../common/* SortColors.kt Tester.kt -include-runtime -d sortcolorstester.jar
+          java -jar sortcolorstester.jar

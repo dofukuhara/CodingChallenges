@@ -284,3 +284,21 @@ jobs:
           cd src/main/kotlin/wordbreak
           kotlinc ../utils/* ../common/* WordBreak.kt Tester.kt -include-runtime -d wordbreaktester.jar
           java -jar wordbreaktester.jar
+  run-regex-match:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run RegexMatch
+        run: |
+          cd src/main/kotlin/regexmatch
+          kotlinc ../utils/* ../common/* RegexMatch.kt Tester.kt -include-runtime -d regexmatchtester.jar
+          java -jar regexmatchtester.jar
+  run-linkedlist-intersection:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run IntersectionOfTwoLinkedLists
+        run: |
+          cd src/main/kotlin/intersectionoftwolinkedlists
+          kotlinc ../utils/* ../common/* IntersectionOfTwoLinkedLists.kt Tester.kt -include-runtime -d intersectiontester.jar
+          java -jar intersectiontester.jar

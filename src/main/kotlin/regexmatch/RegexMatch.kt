@@ -1,4 +1,4 @@
-package regesmatch
+package regexmatch
 
 
 class RegexMatch {

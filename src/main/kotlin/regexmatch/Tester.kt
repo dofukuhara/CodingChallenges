@@ -1,4 +1,4 @@
-package regesmatch
+package regexmatch
 
 import utils.assertWith
 

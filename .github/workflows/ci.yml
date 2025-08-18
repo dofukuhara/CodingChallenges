@@ -17,7 +17,7 @@ jobs:
   run-atm-withdraw:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run AtmWithdraw
         run: |
           cd src/main/kotlin/atmwithdraw
@@ -26,7 +26,7 @@ jobs:
   run-two-sum:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run TwoSum
         run: |
           cd src/main/kotlin/twosum
@@ -35,7 +35,7 @@ jobs:
   run-valid-parentheses:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run ValidParentheses
         run: |
           cd src/main/kotlin/validparentheses
@@ -44,7 +44,7 @@ jobs:
   run-first-bad-version:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run FirstBadVersion
         run: |
           cd src/main/kotlin/firstbadversion
@@ -53,7 +53,7 @@ jobs:
   run-ransom-note:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run RansomNote
         run: |
           cd src/main/kotlin/ransomnote
@@ -62,7 +62,7 @@ jobs:
   run-maximum-subarray:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run MaximumSubarray
         run: |
           cd src/main/kotlin/maximumsubarray
@@ -71,7 +71,7 @@ jobs:
   run-insert-interval:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run InsertInterval
         run: |
           cd src/main/kotlin/insertinterval
@@ -80,7 +80,7 @@ jobs:
   run-binary-search:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run BinarySearch
         run: |
           cd src/main/kotlin/binarysearch
@@ -89,7 +89,7 @@ jobs:
   run-linked-list-cycle:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run LinkedListCycle
         run: |
           cd src/main/kotlin/linkedlistcycle
@@ -98,7 +98,7 @@ jobs:
   run-01-matrix:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run 01Matrix
         run: |
           cd src/main/kotlin/matrix01
@@ -107,7 +107,7 @@ jobs:
   run-k-closes-points-to-origin:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run KClosestPointsToOrigin
         run: |
           cd src/main/kotlin/kclosestpointstoorigin
@@ -116,7 +116,7 @@ jobs:
   run-longest-unique-substring:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run LongestSubstringWithoutRepeatingCharacters
         run: |
           cd src/main/kotlin/longestuniquesubstring
@@ -125,7 +125,7 @@ jobs:
   run-three-sum:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run 3Sum
         run: |
           cd src/main/kotlin/threesum
@@ -134,7 +134,7 @@ jobs:
   run-bst-lca:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run LowestCommonAncestorBST
         run: |
           cd src/main/kotlin/lowestcommonancestorbst
@@ -143,7 +143,7 @@ jobs:
   run-balanced-binary-tree:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run BalancedBinaryTree
         run: |
           cd src/main/kotlin/balancedbinarytree
@@ -152,7 +152,7 @@ jobs:
   run-add-binary:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run AddBinary
         run: |
           cd src/main/kotlin/addbinary
@@ -161,7 +161,7 @@ jobs:
   run-clone-graph:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run CloneGraph
         run: |
           cd src/main/kotlin/clonegraph
@@ -170,7 +170,7 @@ jobs:
   run-course-schedule:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run CourseSchedule
         run: |
           cd src/main/kotlin/courseschedule
@@ -179,7 +179,7 @@ jobs:
   run-trie-implementation:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run trieprefixtree
         run: |
           cd src/main/kotlin/trieprefixtree
@@ -188,7 +188,7 @@ jobs:
   run-coin-change:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run CoinChange
         run: |
           cd src/main/kotlin/coinchange
@@ -197,7 +197,7 @@ jobs:
   run-number-of-islands:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run NumberOfIslands
         run: |
           cd src/main/kotlin/numberofislands
@@ -206,7 +206,7 @@ jobs:
   run-rotting-oranges:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run RottingOranges
         run: |
           cd src/main/kotlin/rottingoranges
@@ -215,7 +215,7 @@ jobs:
   run-search-rotated-sorted-array:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run SearchInRotatedSortedArray
         run: |
           cd src/main/kotlin/searchrotatedsortedarray
@@ -224,7 +224,7 @@ jobs:
   run-combination-sum:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run CombinationSum
         run: |
           cd src/main/kotlin/combinationsum
@@ -233,7 +233,7 @@ jobs:
   run-permutations:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run Permutations
         run: |
           cd src/main/kotlin/permutations
@@ -242,7 +242,7 @@ jobs:
   run-fibonacci:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run Fibonacci
         run: |
           cd src/main/kotlin/fibonacci
@@ -251,7 +251,7 @@ jobs:
   run-validate-binary-search-tree:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run ValidateBinarySearchTree
         run: |
           cd src/main/kotlin/validatebinarysearchtree
@@ -260,7 +260,7 @@ jobs:
   run-lca:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run LowestCommonAncestor
         run: |
           cd src/main/kotlin/lowestcommonancestor
@@ -269,7 +269,7 @@ jobs:
   run-sort-color:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run SortColors
         run: |
           cd src/main/kotlin/sortcolors
@@ -278,7 +278,7 @@ jobs:
   run-word-break:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run WordBreak
         run: |
           cd src/main/kotlin/wordbreak
@@ -287,7 +287,7 @@ jobs:
   run-regex-match:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run RegexMatch
         run: |
           cd src/main/kotlin/regexmatch
@@ -296,7 +296,7 @@ jobs:
   run-linkedlist-intersection:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Run IntersectionOfTwoLinkedLists
         run: |
           cd src/main/kotlin/intersectionoftwolinkedlists
